@@ -1,0 +1,31 @@
+version: '2'
+services:
+  app:
+    build: ./nginx/microservice-http/
+    image: app:0.5.0
+    volumes:
+    - ./react-app/dist:/usr/share/nginx/html
+    ports:
+    - "8080:80"
+  api:
+    build: ./api/
+    image: api:0.5.0
+    volumes:
+    - ./api/api-server.js:/var/www/api/api-server.js
+    - ./api/src:/var/www/api/src
+    environment:
+    - ARANGODB_HOST=arango
+    - ARANGODB_PORT=8529
+    - ARANGODB_USERNAME=root
+    - ARANGODB_PASSWORD=wlarango
+    - ARANGODB_DB=wl_db
+    ports:
+    - "3030:3030"
+  arango:
+    image: arangodb/arangodb:3.2.2
+    ports:
+    - "8529:8529"
+    environment:
+    - ARANGO_ROOT_PASSWORD=wlarango
+    volumes:
+    - ./arangodb/data:/var/lib/arangodb

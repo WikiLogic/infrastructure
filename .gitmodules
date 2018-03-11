@@ -1,0 +1,6 @@
+[submodule "api"]
+	path = api
+	url = https://github.com/WikiLogic/api.git
+[submodule "react-app"]
+	path = react-app
+	url = https://github.com/WikiLogic/react-app.git
