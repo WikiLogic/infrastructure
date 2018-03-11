@@ -17,11 +17,11 @@ Each service (or "cog") is in it's own repository, which is included within this
 
 Everything is built into a single docker image. This is meant to be the simplest set up to give the development of this project a bit of a kick. It'll also hopefully make deployment & running it quit easy.
 
-TODO: Figure out how to get it all running on the one container.
+* [ ] TODO: Figure out how to get it all running on the one container.
 
 **./\_configs/monolith-https**
 
-TODO: set up ssl for the single image version of WL
+* [ ] TODO: set up ssl for the single image version of WL
 
 **./\_configs/microservice-http**
 
@@ -29,12 +29,12 @@ TODO: set up ssl for the single image version of WL
 * **api**: Currently an all in one express.js server.
 * **arango**: The database server, just the arango docker image
 
-TODO: Look into splitting out a data volume container
-TODO: Orcastration with Kubernetes
+* [ ] TODO: Look into splitting out a data volume container
+* [ ] TODO: Orcastration with Kubernetes
 
 **./\_configs/microservice-https**
 
-TODO: apply ssl to the microservice version
+* [ ] TODO: apply ssl to the microservice version
 
 ---
 
@@ -49,3 +49,5 @@ TODO: apply ssl to the microservice version
 **DevOps challenge: setting up Certbot to run with Docker (& possibly Kubernetes)**: We've put ssl on pause for now to get a basic version up and running faster. But it is a 100% must do thing.
 
 **CI integration & testing**: we haven't got any set up yet!
+
+**Install without Docker documentation**: because not everyone will be running Docker.
