@@ -1,8 +1,11 @@
 # Wikilogic Infrastructure
 
-Pulls together the WL cogs into one big pretty engine
+> To run:  
+> `cd _configs/microservice-http`  
+> `docker-compose up`  
+> http://localhost/
 
-Each service (or "cog") is in it's own repository, which is included within this one as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+Each service (or "cog") is in it's own repository, which is included within this one as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Currently there are a couple of different ways to run WL. If you have Docker set up, see the **./\_configs** section below, otherwise you'll have to install node, nginx, and the DB to run the full system. There's also a **Helo needed!** section at the end of the readme if you're looking for a way to get involved!
 
 ## ./\_configs
 
@@ -30,3 +33,17 @@ TODO: Orcastration with Kubernetes
 ### microservice-https
 
 TODO: apply ssl to the microservice version
+
+---
+
+## Help needed!
+
+**Build WL into a single docker image**: Running the express server, nginx, and ArangoDB is being worked out in ./\_configs/monolith-http. The motivation for creating a single image is to make it as easy as possible for anyone to host their own version.
+
+**Which Graph DB? ArangoDB vs Neo4J vs ?**: we're not graph DB experts but the project is moving in a direction where one will be needed!
+
+**API Architecture**: Feedback / ideas & reasons for a redesign to make the API more extensible / generally better.
+
+**DevOps challenge: setting up Certbot to run with Docker (& possibly Kubernetes)**: We've put ssl on pause for now to get a basic version up and running faster. But it is a 100% must do thing.
+
+**CI integration & testing**: we haven't got any set up yet!

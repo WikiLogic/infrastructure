@@ -1,18 +1,29 @@
-version: '2'
+version: '3'
 services:
+  # App is an nginx reverse proxy that also serves the static files
   app:
-    build: ./nginx/microservice-http/
+    build:
+      # this sets where the Dockerfile is allowed to copy from. 
+      # Without backing up to the infrastructure root, permission to 
+      # copy source code from the git submodule repo is denied.
+      context: ../../
+      # The context has been set so we need to jump back into this Dockerfile's dir
+      dockerfile: ./_configs/microservice-http/nginx/Dockerfile
     image: app:0.5.0
+    # TODO: Test if the context command sets context for volumes
     volumes:
-    - ./react-app/dist:/usr/share/nginx/html
+    - ../../react-app/dist/index.html:/usr/share/nginx/html/index.html
+    - ../../react-app/dist/static:/usr/share/nginx/html/static
     ports:
-    - "8080:80"
+    - "80:80"
   api:
-    build: ./api/
+    build:
+      context: ../../
+      dockerfile: ./_configs/microservice-http/api/Dockerfile
     image: api:0.5.0
     volumes:
-    - ./api/api-server.js:/var/www/api/api-server.js
-    - ./api/src:/var/www/api/src
+    - ../../api/api-server.js:/var/www/api/api-server.js
+    - ../../api/src:/var/www/api/src
     environment:
     - ARANGODB_HOST=arango
     - ARANGODB_PORT=8529
@@ -26,6 +37,7 @@ services:
     ports:
     - "8529:8529"
     environment:
-    - ARANGO_ROOT_PASSWORD=wlarango
+    # - ARANGO_ROOT_PASSWORD=wlarango
+    - ARANGO_NO_AUTH=1
     volumes:
     - ./arangodb/data:/var/lib/arangodb
