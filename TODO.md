@@ -16,3 +16,5 @@ Next up - build the docker image through a service with incremental versioning (
 Next - look at the user system - can it be built as a seperate service and handle auth checking?
 
 Next - golden layout UI? - create an editing mode of WL with that screen thing? For each service :P
+
+https://youtu.be/j-0Bj40juMI?t=899 CSP additions!
