@@ -1,27 +1,29 @@
 # Wikilogic Infrastructure
 
-> To run:  
-> `cd _configs/microservice-http`  
-> `docker-compose up`  
-> http://localhost/
+**Clone the repo and it's sub-repos:**
 
-Each service (or "cog") is in it's own repository, which is included within this one as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Currently there are a couple of different ways to run WL. If you have Docker set up, see the **./\_configs** section below, otherwise you'll have to install node, nginx, and the DB to run the full system. There's also a **Help needed!** section at the end of the readme if you're looking for a way to get involved!
+ - git 2.13+ `git clone --recurse-submodules -j8 https://github.com/WikiLogic/infrastructure.git`
+ - For older versions of git [see this stackoverflow](https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodules). `git --version`
 
-## ./\_configs
+**Run WL**
 
-There are a few variations of server set up for WL, the configuration files for each are in `./_configs` - they also happen to kind of reflect the architectural roadmap.
+ - `cd _configs/microservice-http`  
+ - `docker-compose up`  
+ - http://localhost/
 
-### monolith-http
+Each service (or "cog") is in it's own repository, which is included within this one as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Currently there are a couple of different ways to run WL. If you have Docker set up, see each "./\_configs" section below, otherwise you'll have to install node, nginx, and the DB to run the full system. There's also a "Help needed!" section at the end of the readme if you're looking for a way to get involved.
+
+**./\_configs/monolith-http**
 
 Everything is built into a single docker image. This is meant to be the simplest set up to give the development of this project a bit of a kick. It'll also hopefully make deployment & running it quit easy.
 
 TODO: Figure out how to get it all running on the one container.
 
-### monolith-https
+**./\_configs/monolith-https**
 
 TODO: set up ssl for the single image version of WL
 
-### microservice-http
+**./\_configs/microservice-http**
 
 * **nginx**: Reverse proxy the API and serves the static FED assets. Until we do an isomorphic version, then that will get split out into it's own container.
 * **api**: Currently an all in one express.js server.
@@ -30,7 +32,7 @@ TODO: set up ssl for the single image version of WL
 TODO: Look into splitting out a data volume container
 TODO: Orcastration with Kubernetes
 
-### microservice-https
+**./\_configs/microservice-https**
 
 TODO: apply ssl to the microservice version
 
