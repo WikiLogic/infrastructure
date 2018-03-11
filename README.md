@@ -5,7 +5,7 @@
 > `docker-compose up`  
 > http://localhost/
 
-Each service (or "cog") is in it's own repository, which is included within this one as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Currently there are a couple of different ways to run WL. If you have Docker set up, see the **./\_configs** section below, otherwise you'll have to install node, nginx, and the DB to run the full system. There's also a **Helo needed!** section at the end of the readme if you're looking for a way to get involved!
+Each service (or "cog") is in it's own repository, which is included within this one as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Currently there are a couple of different ways to run WL. If you have Docker set up, see the **./\_configs** section below, otherwise you'll have to install node, nginx, and the DB to run the full system. There's also a **Help needed!** section at the end of the readme if you're looking for a way to get involved!
 
 ## ./\_configs
 
