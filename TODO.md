@@ -1,20 +1,29 @@
-Build WL into one single docker image. (will split up later).
+## High priority
 
-* Get arangodb installed & running
-* Get the API talking to ArangoDB
+* Figure out data persistance
+  * [x] data volumes set up
+  * [ ] periodic backup service (in another container that speaks to arango?)
+    * arangodump `unix> arangodump --server.database "wl-dev-db" --server.password "password" --output-directory "dump-yyyymmdd"`
+      * will fail if the defined dump directory exists
+      * when finished it prints out a summary line (TODO: log this!)
+    * arangorestore
+* Deploy without https.
 
-_Alt route, starte with arango db docker image, install node and nginx over the top_
+## Medium
 
-Tidy up the API server.
+* Add auth to the db through (dynamic?) environment variables
+* Tidy up the API server.
+* Build the docker image through a service with incremental versioning (semantic)
+* look at the user system - can it be built as a seperate service and handle auth checking?
+* https://youtu.be/j-0Bj40juMI?t=899 CSP additions!
+* Set up a Neo4J container again (possibly even other db types!)
+  * send data to both Neo & Arango
+  * monitor and compare performance
 
-Deploy without https.
+## Low
 
-WE SHOULD BE RUNNING!
+* golden layout UI? - create an editing mode of WL with that screen thing? For each service :P
+* Build WL into one single docker image. (will split up later).
 
-Next up - build the docker image through a service with incremental versioning (semantic)
-
-Next - look at the user system - can it be built as a seperate service and handle auth checking?
-
-Next - golden layout UI? - create an editing mode of WL with that screen thing? For each service :P
-
-https://youtu.be/j-0Bj40juMI?t=899 CSP additions!
+  * Get arangodb installed & running
+  * Get the API talking to ArangoDB

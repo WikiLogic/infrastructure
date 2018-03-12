@@ -40,4 +40,9 @@ services:
     # - ARANGO_ROOT_PASSWORD=wlarango
     - ARANGO_NO_AUTH=1
     volumes:
-    - ./arangodb/data:/var/lib/arangodb
+    # /var/lib/arangodb-apps stores extensions
+    - arango-collection-volume:/var/lib/arangodb
+    - arango-log-volume:/var/log/arangodb
+volumes:
+  arango-collection-volume:
+  arango-log-volume:
