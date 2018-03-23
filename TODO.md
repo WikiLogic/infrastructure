@@ -7,7 +7,9 @@
       * will fail if the defined dump directory exists
       * when finished it prints out a summary line (TODO: log this!)
     * arangorestore
-* Deploy without https.
+* CI/CD
+  * [ ] build docker images somewhere
+  * [ ] deploy from those docker images
 
 ## Medium
 
