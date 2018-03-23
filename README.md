@@ -36,6 +36,12 @@ Everything is built into a single docker image. This is meant to be the simplest
 
 * [ ] TODO: apply ssl to the microservice version
 
+
+misc  
+
+* [ ] go through and apply these https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
+
+
 ---
 
 ## Help needed!
