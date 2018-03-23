@@ -7,6 +7,7 @@
       * will fail if the defined dump directory exists
       * when finished it prints out a summary line (TODO: log this!)
     * arangorestore
+* Move all the Docker things into the infastructure repo and out the API / react-app repos
 
 **CI/CD**
 
