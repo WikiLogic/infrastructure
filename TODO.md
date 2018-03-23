@@ -11,7 +11,7 @@
 **CI/CD**
 
 Push to API repo to kick off:  
- - something that runs a DB container, the API container
+ - something that runs a docker DB container then also the API
  - runs the API tests
  - marks if it passes or fails in the API repo
 
