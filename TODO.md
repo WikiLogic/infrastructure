@@ -7,9 +7,28 @@
       * will fail if the defined dump directory exists
       * when finished it prints out a summary line (TODO: log this!)
     * arangorestore
-* CI/CD
-  * [ ] build docker images somewhere
-  * [ ] deploy from those docker images
+* Move all the Docker things into the infastructure repo and out the API / react-app repos
+
+**CI/CD**
+
+Push to API repo to kick off:  
+ - something that runs a docker DB container then also the API
+ - runs the API tests
+ - marks if it passes or fails in the API repo
+
+Push to the react-app repo to kick off:
+ - something that runs a DB container, the API container, and the react-app container
+ - runs the front end tests (todo!) regression / a11y
+ - marks if it passes or fails in the react-app repo
+
+(advanced!)  
+A successfull test on the API or react-app repo master branches kicks off:
+ - something that builds all the containers in the infastructure repo
+ - runs end to end tests / performance tests
+ - marks if it passes or fails
+ 
+ALTERNATE IDEA
+Push to API or react-app repos kicks off a full build in the infastructure repo...
 
 ## Medium
 
