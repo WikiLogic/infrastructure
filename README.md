@@ -1,15 +1,20 @@
 # Wikilogic Infrastructure
 
+| Service   | Build Status                                                                                                              |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------ |
+| API       | [![Build Status](https://travis-ci.org/WikiLogic/api.svg?branch=master)](https://travis-ci.org/WikiLogic/api)             |
+| React-app | [![Build Status](https://travis-ci.org/WikiLogic/react-app.svg?branch=master)](https://travis-ci.org/WikiLogic/react-app) |
+
 **Clone the repo and it's sub-repos:**
 
- - git 2.13+ `git clone --recurse-submodules -j8 https://github.com/WikiLogic/infrastructure.git`
- - For older versions of git [see this stackoverflow](https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodules). `git --version`
+* git 2.13+ `git clone --recurse-submodules -j8 https://github.com/WikiLogic/infrastructure.git`
+* For older versions of git [see this stackoverflow](https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodules). `git --version`
 
 **Run WL**
 
- - `cd _configs/microservice-http`  
- - `docker-compose up`  
- - http://localhost/
+* `cd _configs/microservice-http`
+* `docker-compose up`
+* http://localhost/
 
 Each service (or "cog") is in it's own repository, which is included within this one as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Currently there are a couple of different ways to run WL. If you have Docker set up, see each "./\_configs" section below, otherwise you'll have to install node, nginx, and the DB to run the full system. There's also a "Help needed!" section at the end of the readme if you're looking for a way to get involved.
 
@@ -36,11 +41,9 @@ Everything is built into a single docker image. This is meant to be the simplest
 
 * [ ] TODO: apply ssl to the microservice version
 
-
-misc  
+misc
 
 * [ ] go through and apply these https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
-
 
 ---
 
