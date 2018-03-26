@@ -49,7 +49,7 @@ RUN npm install
 RUN npm install nodemon -g
 
 # Copy the api files in
-COPY ../../api/api-server.js ./api-server.js
+COPY ../../api/api.js ./api.js
 COPY ../../api/src ./src
 
 # Copy the FED files into /var/www/static/
