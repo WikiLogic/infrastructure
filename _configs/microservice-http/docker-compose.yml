@@ -1,7 +1,7 @@
 version: '3'
 services:
   # App is an nginx reverse proxy that also serves the static files
-  app:
+  nginx:
     build:
       # this sets where the Dockerfile is allowed to copy from. 
       # Without backing up to the infrastructure root, permission to 
@@ -16,6 +16,8 @@ services:
     - ../../react-app/dist/static:/usr/share/nginx/html/static
     ports:
     - "80:80"
+    links:
+    - api
   api:
     build:
       context: ../../
@@ -32,13 +34,18 @@ services:
     - ARANGODB_DB=wl_db
     ports:
     - "3030:3030"
+    links:
+    - arango
   arango:
     image: arangodb/arangodb:3.2.2
     ports:
     - "8529:8529"
     environment:
-    # - ARANGO_ROOT_PASSWORD=wlarango
+    - ARANGO_ROOT_PASSWORD=t
     - ARANGO_NO_AUTH=1
+    - ARANGODB_USERNAME=t
+    - ARANGODB_PASSWORD=t
+    - ARANGODB_DB=t
     volumes:
     # /var/lib/arangodb-apps stores extensions
     - arango-collection-volume:/var/lib/arangodb
