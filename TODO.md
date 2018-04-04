@@ -50,3 +50,4 @@ Push to API or react-app repos kicks off a full build in the infastructure repo.
   * Get the API talking to ArangoDB
   
 * Set up a release checklist, eg here's the react one: https://github.com/facebook/react/issues/10620
+* I18n repo...?
