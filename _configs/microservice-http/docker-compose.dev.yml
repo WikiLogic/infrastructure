@@ -1,0 +1,9 @@
+# extends the production compose file, turns the code directories into volumes
+version: '3'
+services:
+  nginx:
+  api:
+    volumes:
+    - ../../api/api.js:/var/www/api/api.js
+    - ../../api/src:/var/www/api/src
+  arango:

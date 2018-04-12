@@ -15,7 +15,7 @@ COPY ./api/src ./src
 
 # Define default command. Using pm2 to run the API in production http://pm2.keymetrics.io/
 # CMD ["pm2-docker", "api.js"]
-CMD ["nodemon", "api.js"]
+CMD ["nodemon", "--legacy-watch", "api.js"]
 
 # Expose ports.
 EXPOSE 3030
